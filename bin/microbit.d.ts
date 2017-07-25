@@ -1,0 +1,22 @@
+export declare const MICROBIT_FLASH_ALGO: {
+    instructions: number[];
+    pcInit: number;
+    pcUnInit: number;
+    pcProgramPage: number;
+    pcEraseSector: number;
+    pcEraseAll: number;
+    roStart: number;
+    roSize: number;
+    rwStart: number;
+    rwSize: number;
+    ziStart: number;
+    ziSize: number;
+    flashStart: number;
+    flashSize: number;
+    pageSize: number;
+    sectorSizes: number[][];
+    breakpointLocation: number;
+    staticBase: number;
+    stackPointer: number;
+    loadAddress: number;
+};

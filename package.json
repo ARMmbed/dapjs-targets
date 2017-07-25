@@ -2,7 +2,6 @@
   "name": "dapjs-targets",
   "version": "1.0.0",
   "description": "mbed targets for DAP.js",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,5 +24,7 @@
   "homepage": "https://github.com/matthewelse/dapjs-targets#readme",
   "devDependencies": {
     "dapjs": "github:matthewelse/dapjs"
-  }
+  },
+  "typings": "bin/main.d.ts",
+  "main": "bin/main.js"
 }
