@@ -1,0 +1,29 @@
+{
+  "name": "dapjs-targets",
+  "version": "1.0.0",
+  "description": "mbed targets for DAP.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewelse/dapjs-targets.git"
+  },
+  "keywords": [
+    "dapjs",
+    "dap",
+    "debugging",
+    "mbed",
+    "targets"
+  ],
+  "author": "Matthew Else <matthew.else@arm.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthewelse/dapjs-targets/issues"
+  },
+  "homepage": "https://github.com/matthewelse/dapjs-targets#readme",
+  "devDependencies": {
+    "dapjs": "github:matthewelse/dapjs"
+  }
+}
