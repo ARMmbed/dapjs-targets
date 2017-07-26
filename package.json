@@ -22,9 +22,12 @@
     "url": "https://github.com/matthewelse/dapjs-targets/issues"
   },
   "homepage": "https://github.com/matthewelse/dapjs-targets#readme",
-  "devDependencies": {
+  "peerDependencies": {
     "dapjs": "github:matthewelse/dapjs"
   },
   "typings": "bin/main.d.ts",
-  "main": "bin/main.js"
+  "main": "bin/main.js",
+  "dependencies": {
+    "dapjs": "github:matthewelse/dapjs"
+  }
 }

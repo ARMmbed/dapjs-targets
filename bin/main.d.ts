@@ -1,2 +1,2 @@
-export { MbedTarget, FlashAlgos } from "./MbedTarget";
+export { FlashAlgos, MbedTarget } from "./MbedTarget";
 export { FlashTarget } from "./FlashTarget";

@@ -128,7 +128,7 @@ var MbedTarget = (function (_super) {
                         startAddress = this.flashAlgo.flashStart + ptr;
                         bufferAddress = this.flashAlgo.staticBase;
                         console.log("Writing program to memory: " + bufferAddress + " " + data.length);
-                        return [4 /*yield*/, this.writeBlock(bufferAddress, data.slice(ptr, ptr + this.flashAlgo.pageSize))];
+                        return [4 /*yield*/, this.memory.writeBlock(bufferAddress, data.slice(ptr, ptr + this.flashAlgo.pageSize))];
                     case 4:
                         _a.sent();
                         console.log("Running flashing algorithm");
@@ -161,22 +161,20 @@ var MbedTarget = (function (_super) {
                         return [4 /*yield*/, this.halt()];
                     case 1:
                         _a.sent();
-                        return [4 /*yield*/, this.readMem(3758157308 /* DEMCR */)];
+                        return [4 /*yield*/, this.memory.read32(3758157308 /* DEMCR */)];
                     case 2:
                         demcr = _a.sent();
-                        return [4 /*yield*/, this.writeMem(3758157308 /* DEMCR */, demcr | 1 /* DEMCR_VC_CORERESET */)];
+                        return [4 /*yield*/, this.memory.write32(3758157308 /* DEMCR */, demcr | 1 /* DEMCR_VC_CORERESET */)];
                     case 3:
                         _a.sent();
                         return [4 /*yield*/, this.reset()];
                     case 4:
                         _a.sent();
-                        _a.label = 5;
-                    case 5: return [4 /*yield*/, this.isHalted()];
+                        return [4 /*yield*/, this.waitForHalt()];
+                    case 5:
+                        _a.sent();
+                        return [4 /*yield*/, this.memory.write32(3758157308 /* DEMCR */, demcr)];
                     case 6:
-                        if (!!(_a.sent())) return [3 /*break*/, 7];
-                        return [3 /*break*/, 5];
-                    case 7: return [4 /*yield*/, this.writeMem(3758157308 /* DEMCR */, demcr)];
-                    case 8:
                         _a.sent();
                         return [2 /*return*/];
                 }

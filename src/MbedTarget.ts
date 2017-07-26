@@ -94,7 +94,7 @@ export class MbedTarget extends FlashTarget {
             const bufferAddress = this.flashAlgo.staticBase;
 
             console.log(`Writing program to memory: ${bufferAddress} ${data.length}`)
-            await this.writeBlock(bufferAddress, data.slice(ptr, ptr + this.flashAlgo.pageSize));
+            await this.memory.writeBlock(bufferAddress, data.slice(ptr, ptr + this.flashAlgo.pageSize));
 
             console.log("Running flashing algorithm");
             const result = await this.runCode(
@@ -118,14 +118,14 @@ export class MbedTarget extends FlashTarget {
 
         await this.halt();
 
-        const demcr = await this.readMem(CortexSpecialReg.DEMCR);
+        const demcr = await this.memory.read32(CortexSpecialReg.DEMCR);
 
-        await this.writeMem(CortexSpecialReg.DEMCR, demcr | CortexSpecialReg.DEMCR_VC_CORERESET);
+        await this.memory.write32(CortexSpecialReg.DEMCR, demcr | CortexSpecialReg.DEMCR_VC_CORERESET);
         await this.reset();
 
-        while (!(await this.isHalted())) { /* spin */ }
+        await this.waitForHalt();
 
-        await this.writeMem(CortexSpecialReg.DEMCR, demcr);
+        await this.memory.write32(CortexSpecialReg.DEMCR, demcr);
     }
 }
 
