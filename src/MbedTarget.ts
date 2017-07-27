@@ -17,7 +17,7 @@ export interface IFlashAlgo {
     pcProgramPage: number;
     stackPointer: number;
     staticBase: number;
-    instructions: number[];
+    instructions: Uint32Array;
     breakpointLocation: number;
     pageSize: number;
     flashStart: number;
@@ -84,7 +84,7 @@ export class MbedTarget extends FlashTarget {
      *
      * @param data Array of 32-bit integers to write to flash.
      */
-    public async flash(data: number[]) {
+    public async flash(data: Uint32Array) {
         await this.halt();
         await this.writeCoreRegister(CortexReg.R9, this.flashAlgo.staticBase);
 

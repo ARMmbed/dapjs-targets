@@ -13,7 +13,7 @@ export interface IFlashAlgo {
     pcProgramPage: number;
     stackPointer: number;
     staticBase: number;
-    instructions: number[];
+    instructions: Uint32Array;
     breakpointLocation: number;
     pageSize: number;
     flashStart: number;
@@ -37,7 +37,7 @@ export declare class MbedTarget extends FlashTarget {
      *
      * @param data Array of 32-bit integers to write to flash.
      */
-    flash(data: number[]): Promise<void>;
+    flash(data: Uint32Array): Promise<void>;
     private resetStopOnReset();
 }
 export declare let FlashAlgos: Map<string, IFlashAlgo>;

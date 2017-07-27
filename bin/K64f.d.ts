@@ -1,5 +1,5 @@
 export declare const K64F_FLASH_ALGO: {
-    instructions: number[];
+    instructions: Uint32Array;
     pcInit: number;
     pcUnInit: number;
     pcProgramPage: number;

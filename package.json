@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matthewelse/dapjs-targets.git"
+    "url": "git+https://github.com/ARMmbed/dapjs-targets.git"
   },
   "keywords": [
     "dapjs",
@@ -19,15 +19,15 @@
   "author": "Matthew Else <matthew.else@arm.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/matthewelse/dapjs-targets/issues"
+    "url": "https://github.com/ARMmbed/dapjs-targets/issues"
   },
-  "homepage": "https://github.com/matthewelse/dapjs-targets#readme",
+  "homepage": "https://github.com/ARMmbed/dapjs-targets#readme",
   "peerDependencies": {
-    "dapjs": "github:matthewelse/dapjs"
+    "dapjs": "github:ARMmbed/dapjs"
+  },
+  "devDependencies": {
+    "dapjs": "github:ARMmbed/dapjs"
   },
   "typings": "bin/main.d.ts",
-  "main": "bin/main.js",
-  "dependencies": {
-    "dapjs": "github:matthewelse/dapjs"
-  }
+  "main": "bin/main.js"
 }
